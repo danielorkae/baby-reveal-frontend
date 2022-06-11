@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menino ou menina?</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <section class="timer-section">
+        <div class="timer-section__timer-box">
+            <span class="my-2 d-inline-block">🕗</span>
+            <h1 class="timer-box__timer">00:00:00 horas</h1>
+            <span class="text-uppercase">
+                para descobrir se o bebê costa lopes<br> 
+                é menino ou menina
+            </span>
+        </div>
+    </section>
+
+    <section class="guess-section">
+        <div class="d-none d-lg-block">
+            <img class="flag flag-blue" src="assets/img/flags-blue.png">
+            <img class="flag flag-ping" src="assets/img/flags-pink.png">
+        </div>
+        <div class="container">
+            <h1>Dê o seu palpite</h1>
+
+            <form id="guess-form" action="#" onsubmit="guessFormSubmitHandler(event)">
+                <div class="form-group">
+                    <label for="name">Seu nome</label>
+                    <input type="text" class="form-control text-center border-bottom" id="name"
+                        placeholder="Digite seu nome aqui" name="name"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="guess" class="mb-4">Eu acho que o bebê é...</label>
+                    <div class="text-center">
+                        <div class="form-check my-4 p-0 d-md-inline-block">
+                            <input class="form-check-input" type="radio" name="guess" id="guess-boy" value="male">
+                            <label class="form-check-label" for="guess-boy">
+                                <div class="card-guess card-guess--blue">
+                                    <div class="card-guess__img">
+                                        <img src="assets/img/bear-blue.png" alt="" />
+                                    </div>
+                                    <div class="card-guess__title">
+                                        <span>Menino</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="form-check my-4 p-0 d-md-inline-block">
+                            <input class="form-check-input" type="radio" name="guess" id="guess-girl" value="female" />
+                            <label class="form-check-label" for="guess-girl">
+                                <div class="card-guess card-guess--pink">
+                                    <div class="card-guess__img">
+                                        <img src="assets/img/bear-pink.png" />
+                                    </div>
+                                    <div class="card-guess__title">
+                                        <span>Menina</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+
+            <div class="guess-registered" style="display: none;">
+                <p>Seu palpite foi registrado!</p>
+                <p>Em breve ele será contabilizado e seu nome aparecerá na lista mais abaixo :D</p>
+                <img src="assets/img/bear-blue.png" alt="" />
+                <img src="assets/img/bear-pink.png" />
+
+            </div>
+        </div>
+    </section>
+
+    <section class="guesses-section">
+        <div class="guesses-section__header">
+            <h1>Veja quem já deu palpite</h1>
+        </div>
+
+        <div class="guesses-section__guesses">
+            <div class="guesses-list guesses-list--boy">
+                <h6>#TIMEMENINO</h6>
+                <div class="guesses-list-items--boy">
+                </div>
+            </div>
+
+            <div class="guesses-list guesses-list--girl">
+                <h6>#TIMEMENINA</h6>
+                <div class="guesses-list-items--girl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <span>Feito em 2022 pelos papais Daniel e Cibele ❤</span>
+        </div>
+    </footer>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

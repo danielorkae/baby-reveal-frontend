@@ -1,0 +1,211 @@
+body {
+    font-family: "Montserrat", "Franklin Gothic Medium", "Arial Narrow", Arial,
+        sans-serif;
+}
+
+h1 {
+    font-family: "Grand Hotel", cursive;
+    font-size: 70px;
+    color: #c38f6f;
+}
+
+.btn.btn-primary {
+    background-color: #c38f6f;
+    border-color: #c38f6f;
+    border-radius: 25px;
+    padding: 8px 35px;
+}
+
+.btn.btn-primary:hover {
+    background-color: #a97251;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.btn.btn-primary:active {
+    background-color: #c38f6f;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+section.timer-section {
+    background-image: url('../img/timer-bg.png');
+    background-position-x: center;
+
+    height: 100vh;
+}
+
+section.timer-section .timer-section__timer-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 180.5px;
+    padding: 50px 70px;
+    text-align: center;
+}
+
+section.guess-section {
+    background-color: white;
+    padding: 50px 0 80px 0;
+    position: relative;
+}
+
+section.guess-section .guess-registered {
+    text-align: center;
+    color: #c38f6f;
+    margin-top: 50px;
+    font-size: 18px;
+}
+
+section.guess-section .flag {
+    position: absolute;
+    height: 100px;
+}
+
+section.guess-section .flag-blue {
+    top: 0;
+    left: 0;
+}
+
+section.guess-section .flag-ping {
+    top: 0;
+    right: 0;
+}
+
+section.guess-section h1 {
+    text-align: center;
+}
+
+section.guess-section .form-group {
+    margin-top: 50px;
+}
+
+section.guess-section label {
+    font-size: 18px;
+    color: #c38f6f;
+    font-weight: 600;
+    text-align: center;
+    display: block;
+}
+
+section.guess-section input {
+    border: none;
+    border-bottom: 1px solid #a3a3a3 !important;
+    border-radius: 0;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+section.guess-section input.form-check-input {
+    display: none;
+}
+
+section.guess-section .card-guess {
+    width: 165px;
+    border-radius: 20px;
+    border: 3px solid;
+    margin: 0 15px;
+    display: inline-block;
+}
+
+section.guess-section .card-guess .card-guess__title {
+    background-color: white;
+    padding: 8px;
+    border-radius: 0 0 17px 17px;
+}
+
+section.guess-section .card-guess .card-guess__img {
+    padding: 12px;
+}
+
+section.guess-section .card-guess--blue {
+    background-color: #d0e7fb;
+    border-color: #d0e7fb;
+}
+
+section.guess-section .card-guess--blue:hover {
+    background-color: #95c3ed;
+    border-color: #95c3ed;
+}
+
+section.guess-section input:checked + .form-check-label > .card-guess--blue {
+    background-color: #d0e7fb;
+    border-color: #95c3ed;
+}
+
+section.guess-section .card-guess--pink {
+    background-color: #fedce0;
+    border-color: #fedce0;
+}
+
+section.guess-section .card-guess--pink:hover {
+    background-color: #ff929e;
+    border-color: #ff929e;
+}
+
+section.guess-section input:checked + .form-check-label > .card-guess--pink {
+    background-color: #fedce0;
+    border-color: #ff929e;
+}
+
+section.guesses-section .guesses-section__header {
+    padding: 100px 0;
+    background-color: #eee4de;
+    background-image: url('../img/guesses-bg.png');
+    background-repeat: repeat;
+}
+
+section.guesses-section h1 {
+    text-align: center;
+}
+
+section.guesses-section .guesses-section__guesses {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+section.guesses-section .guesses-list {
+    border: 2px solid;
+    border-top: 10px solid;
+    border-radius: 0 0 20px 20px;
+    min-width: 450px;
+    max-width: 450px;
+    text-align: center;
+    font-weight: 600;
+    color: #8F8F8F;
+    font-size: 18px;
+    padding: 20px;
+    display: inline-block;
+    margin: 20px;
+}
+
+section.guesses-section .guesses-list.guesses-list--boy {
+    border-color: #76B5EB;
+}
+
+section.guesses-section .guesses-list.guesses-list--girl {
+    border-color: #FF929E;
+}
+
+section.guesses-section .guesses-list h6 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+section.guesses-section .guesses-list.guesses-list--boy h6 {
+    color: #76B5EB;
+}
+
+section.guesses-section .guesses-list.guesses-list--girl h6 {
+    color: #FF929E;
+}
+
+footer {
+    background-color: #eee4de;
+    padding: 30px;
+    text-align: center;
+}
