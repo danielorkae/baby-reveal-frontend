@@ -1,4 +1,5 @@
-const apiUrl = "https://baby-reveal.herokuapp.com"
+const apiUrl = "http://localhost:3000";
+// const apiUrl = "https://baby-reveal.herokuapp.com";
 
 const getReveal = async () => {
     const response = await fetch(`${apiUrl}/reveal`);
@@ -8,6 +9,18 @@ const getReveal = async () => {
     if (response.status !== 200) {
         const endDate = data.error.meta.revealDate;
         setRemainingTime(endDate);
+    }
+
+    const revealBoy = document.querySelector(".timer-section__reveal--boy");
+    const revealGirl = document.querySelector(".timer-section__reveal--girl");
+
+    if (data.gender == "male") {
+        revealBoy.setAttribute("style", "display: flex");
+    }
+
+    if (data.gender == "female") {
+        revealGirl.setAttribute("style", "display: flex");
+        console.log(revealGirl)
     }
 };
 
@@ -27,33 +40,31 @@ const loadGuesses = async () => {
     const boys = Object.values(data).filter((v) => v.guess == "male");
     const girls = Object.values(data).filter((v) => v.guess == "female");
 
-    
+    boysDiv.innerHTML = "";
+    girlsDiv.innerHTML = "";
 
-    boysDiv.innerHTML = ""
-    girlsDiv.innerHTML = ""
+    boys.map((g) => {
+        boysDiv.innerHTML += `<p>${g.name}</p>`;
+    });
 
-    boys.map(g => {
-        boysDiv.innerHTML += `<p>${g.name}</p>`
-    })
-
-    girls.map(g => {
-        girlsDiv.innerHTML += `<p>${g.name}</p>`
-    })
+    girls.map((g) => {
+        girlsDiv.innerHTML += `<p>${g.name}</p>`;
+    });
 
     setTimeout(() => {
-        loadGuesses()
-    }, 5000)
+        loadGuesses();
+    }, 5000);
 };
 
 const guessFormSubmitHandler = async (event) => {
     event.preventDefault();
-    const name = document.querySelector('[name=name]').value;
-    const guess = document.querySelector('[name=guess]:checked').value;
+    const name = document.querySelector("[name=name]").value;
+    const guess = document.querySelector("[name=guess]:checked").value;
     const data = {
         name,
-        guess
-    }
-    
+        guess,
+    };
+
     if (name.length === 0 || guess.length === 0) {
         alert("Preencha todos os campos");
         return;
@@ -62,9 +73,9 @@ const guessFormSubmitHandler = async (event) => {
     const response = await fetch(`${apiUrl}/guesses`, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
     });
 
     if (response.status !== 200) {
@@ -72,17 +83,21 @@ const guessFormSubmitHandler = async (event) => {
         return;
     }
 
-    localStorage.setItem('guess', data)
+    localStorage.setItem("guess", data);
 
-    showGuessRegisteredMessage();   
-}
+    showGuessRegisteredMessage();
+};
 
 const showGuessRegisteredMessage = () => {
-    if (localStorage.getItem('guess')) {
-        document.querySelector('#guess-form').setAttribute('style', 'display: none');
-        document.querySelector('.guess-registered').setAttribute('style', 'display: block');
+    if (localStorage.getItem("guess")) {
+        document
+            .querySelector("#guess-form")
+            .setAttribute("style", "display: none");
+        document
+            .querySelector(".guess-registered")
+            .setAttribute("style", "display: block");
     }
-}
+};
 
 const setRemainingTime = (endDate) => {
     const timer = document.querySelector(".timer-box__timer");
@@ -115,7 +130,7 @@ const setRemainingTime = (endDate) => {
     }
 
     setTimeout(() => {
-        setRemainingTime(endDate);
+        diff < 1000 * 60 ? getReveal() : setRemainingTime(endDate);
     }, 1000);
 };
 

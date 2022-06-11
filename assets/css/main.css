@@ -26,11 +26,57 @@ h1 {
     box-shadow: 0px 4px 4px 0px #00000040;
 }
 
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+}
+
+.confetti.confetti-boy {
+    background-image: url('../img/confetti-boy.gif');
+}
+
+.confetti.confetti-girl {
+    background-image: url('../img/confetti-girl.gif');
+}
+
 section.timer-section {
     background-image: url('../img/timer-bg.png');
     background-position-x: center;
 
     height: 100vh;
+}
+
+section.timer-section .timer-section__reveal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.timer-section .timer-section__reveal h1 {
+    font-size: 200px;
+    text-shadow: -7px 7px 0px #FFFFFF;
+}
+
+section.timer-section .timer-section__reveal--boy {
+    background-image: url('../img/boy-bg.jpg');
+}
+
+section.timer-section .timer-section__reveal--boy h1 {
+    color: #76B5EB;
+}
+
+section.timer-section .timer-section__reveal--girl {
+    background-image: url('../img/girl-bg.jpg');
+}
+
+section.timer-section .timer-section__reveal--girl h1 {
+    color: #FF929E;
 }
 
 section.timer-section .timer-section__timer-box {
