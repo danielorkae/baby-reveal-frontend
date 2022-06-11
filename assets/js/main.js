@@ -1,5 +1,4 @@
-const apiUrl = "http://localhost:3000";
-// const apiUrl = "https://baby-reveal.herokuapp.com";
+const apiUrl = "https://baby-reveal.herokuapp.com";
 
 const getReveal = async () => {
     const response = await fetch(`${apiUrl}/reveal`);
