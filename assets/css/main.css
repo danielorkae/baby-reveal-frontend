@@ -34,6 +34,14 @@ h1 {
     height: 40%;
 }
 
+.boy {
+    color: #76B5EB;
+}
+
+.girl {
+    color: #FF929E;
+}
+
 .confetti.confetti-boy {
     background-image: url('../img/confetti-boy.gif');
 }

@@ -13,8 +13,12 @@ const loadGuesses = async () => {
 
     guessesDiv.innerHTML = ""
 
+    const boyElement = '<span class="boy">menino</span>'
+    const girlElement = '<span class="girl">menina</span>'
+
     Object.values(data).map((g) => {
-        guessesDiv.innerHTML += `<p>${g.name} acha que é ${g.gender == 'male' ? 'menino' : 'menina'}</p>`;
+        console.log(g)
+        guessesDiv.innerHTML += `<p>${g.name} acha que é ${g.guess == 'male' ? boyElement : girlElement}</p>`;
     });
 
     setTimeout(() => {
