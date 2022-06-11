@@ -16,7 +16,7 @@ const loadGuesses = async () => {
     const boyElement = '<span class="boy">menino</span>'
     const girlElement = '<span class="girl">menina</span>'
 
-    Object.values(data).map((g) => {
+    Object.values(data).reverse().map((g) => {
         console.log(g)
         guessesDiv.innerHTML += `<p>${g.name} acha que é ${g.guess == 'male' ? boyElement : girlElement}</p>`;
     });
