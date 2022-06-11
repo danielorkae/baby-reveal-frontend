@@ -48,7 +48,7 @@ const loadGuesses = async () => {
 const guessFormSubmitHandler = async (event) => {
     event.preventDefault();
     const name = document.querySelector('[name=name]').value;
-    const guess = document.querySelector('[name=guess]').value;
+    const guess = document.querySelector('[name=guess]:checked').value;
     const data = {
         name,
         guess
